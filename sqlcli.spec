@@ -18,6 +18,8 @@ Requires:	python
 Requires:	python-prettytable
 Requires:	python-sqlalchemy
 
+Buildarch:	noarch
+
 %description
 This is a tool that uses SQLAlchemy to execute SQL queries against a SQL
 database specified via a URL or an INI-style file.
