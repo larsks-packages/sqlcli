@@ -1,4 +1,4 @@
-This `README` was generated automatically using `rpm-update-readme` at Mon Nov 25 19:05:17 EST 2013.
+This `README` was generated automatically using `rpm-update-readme` at Mon Nov 25 21:30:13 EST 2013.
 
 Packages built by this spec file
 ================================
@@ -6,8 +6,8 @@ Packages built by this spec file
 sqlcli
 -------------------------------------
 
-This is tool uses SQLAlchemy to execute SQL queries against a SQL database
-specified via a URL or an INI-style file.
+This is a tool that uses SQLAlchemy to execute SQL queries against a SQL
+database specified via a URL or an INI-style file.
 
 
 Sources used by this spec file
@@ -18,4 +18,5 @@ Sources used by this spec file
 Requirements for building this package
 ======================================
 
+- python
 - python-setuptools
