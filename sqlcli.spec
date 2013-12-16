@@ -1,9 +1,9 @@
 Name:		sqlcli
 Version:	2
-Release:	2%{?dist}
+Release:	3%{?dist}
 Summary:	A command-line SQL query utility
 
-License:	GPLv3
+License:	GPLv3+
 URL:		http://github.com/larsks/sqlcli/
 Source0:	https://github.com/larsks/sqlcli/archive/%{name}-%{version}.tar.gz
 
@@ -31,7 +31,7 @@ of the OpenStack services).
 %{__python2} setup.py install --prefix=%{_prefix} --root=%{buildroot} -O1 --skip-build
 
 %files
-%doc README.md
+%doc README.md COPYING
 
 %attr(0755,root,root) %{_bindir}/sqlcli
 
@@ -39,6 +39,10 @@ of the OpenStack services).
 %{python_sitelib}/sqlcli
 
 %changelog
+
+* Wed Nov 27 2013 Lars Kellogg-Stedman <lars@oddbit.com> - 2-3
+- update license name (GPLv3 -> GPLv3+)
+- added license file to %doc
 
 * Mon Nov 25 2013 Lars Kellogg-Stedman <lars@oddbit.com> - 2-2
 - udpated sqlcli upstream includes license information
