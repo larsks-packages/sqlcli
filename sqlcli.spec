@@ -1,3 +1,14 @@
+%if 0%{?rhel} && 0%{?rhel} <= 5
+%{!?python_sitelib: %global python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")}
+%{!?python_sitearch: %global python_sitearch %(%{__python} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib(1))")}
+%endif
+
+%if 0%{?rhel} && 0%{?rhel} <= 6
+%define python %{__python}
+%else
+%define python %{__python2}
+%endif
+
 Name:		sqlcli
 Version:	2
 Release:	3%{?dist}
@@ -24,11 +35,11 @@ of the OpenStack services).
 %setup -q -n %{name}-%{name}-%{version}
 
 %build
-%{__python2} setup.py build
+%{python} setup.py build
 
 %install
 > requirements.txt
-%{__python2} setup.py install --prefix=%{_prefix} --root=%{buildroot} -O1 --skip-build
+%{python} setup.py install --prefix=%{_prefix} --root=%{buildroot} -O1 --skip-build
 
 %files
 %doc README.md COPYING
